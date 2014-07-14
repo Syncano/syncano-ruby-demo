@@ -1,0 +1,4 @@
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'std_form' }) do |f|
+  %h2 Forgot your password?
+  = f.email_field :email, autofocus: true, placeholder: 'e-mail', required: true, class: 'form-control'
+  = f.submit 'Send', class: 'btn btn-lg btn-primary btn-block'

@@ -1,0 +1,16 @@
+!!! 5
+%html
+  %head
+  %title SyncanoDemo
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+  %body{ :id => "#{controller_name}_controller", :class => action_name }
+    #wrap
+      = render(partial: 'shared/navbar')
+      .container
+        = render(partial: 'shared/flash_messages')
+        = yield
+      #push
+    = render(partial: 'shared/footer')
