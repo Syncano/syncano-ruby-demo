@@ -1,1 +1,7 @@
-= render @auctions
+- if user_signed_in?
+  = link_to('New auction', new_auction_path, class: 'btn btn-primary navbar-btn pull-right')
+.clearfix
+- if @auctions.empty?
+  .well.well-lg.text-center Auctions list is empty
+- else
+  = render(@auctions)

@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-select.min
+//= require ckeditor/init
 //= require_tree .
+
+CKEDITOR.config.toolbar_mini = [
+  ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock', '-', 'Link', 'Unlink','-','About']
+]
+
+$(document).ready(function() {
+  $('select').selectpicker();
+});

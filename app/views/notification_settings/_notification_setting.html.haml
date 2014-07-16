@@ -1,0 +1,16 @@
+.notification-setting.well
+  %p
+    = notification_setting.category.name
+    %span.label.label-info.left-40= number_to_currency(notification_setting.min_price)
+    = '-'
+    %span.label.label-info
+      - if notification_setting.max_price.present?
+        = number_to_currency(notification_setting.max_price)
+      - else
+        = 'unlimited'
+
+  .actions.pull-right
+    = link_to(edit_notification_setting_path(notification_setting)) do
+      %span.glyphicon.glyphicon-pencil.right-5
+    = link_to(notification_setting_path(notification_setting), method: :delete, data: { confirm: 'Are you sure?' }) do
+      %span.glyphicon.glyphicon-remove

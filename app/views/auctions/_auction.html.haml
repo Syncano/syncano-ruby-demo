@@ -1,0 +1,13 @@
+.auction.well.well-lg
+  %h2.auction-title
+    = auction.title
+    %span.label.label-info.pull-right= number_to_currency(auction.price)
+  .auction-description
+    = auction.description.html_safe
+
+  - if auction.belongs_to_user?(current_user)
+    .actions.pull-right
+      = link_to(edit_auction_path(auction)) do
+        %span.glyphicon.glyphicon-pencil.right-5
+      = link_to(auction_path(auction), method: :delete, data: { confirm: 'Are you sure?' }) do
+        %span.glyphicon.glyphicon-remove
