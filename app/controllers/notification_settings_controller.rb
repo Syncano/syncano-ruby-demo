@@ -7,11 +7,11 @@ class NotificationSettingsController < ApplicationController
   end
 
   def new
-    @notification_setting = current_user.notification_settings.new
+    @notification_setting = NotificationSetting.new(user_id: current_user.id)
   end
 
   def create
-    @notification_setting = current_user.notification_settings.new(notification_setting_parameters)
+    @notification_setting = NotificationSetting.new(notification_setting_parameters)
     @notification_setting.user_id = current_user.id
 
     if @notification_setting.save

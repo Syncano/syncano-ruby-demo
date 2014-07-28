@@ -1,6 +1,8 @@
-= link_to('New notification', new_notification_setting_path, class: 'btn btn-primary navbar-btn pull-right')
-.clearfix
-- if @notification_settings.empty?
-  .well.well-lg.text-center You don't have any notification settings yet.
-- else
-  = render(@notification_settings)
+.row
+  .col-sm-12
+    - if @notification_settings.empty?
+      .well.well-lg.text-center You don't have any notification settings yet.
+    - else
+      = render(@notification_settings)
+    = link_to('New notification', new_notification_setting_path, class: 'btn btn-primary navbar-btn pull-right right-10')
+    .clearfix

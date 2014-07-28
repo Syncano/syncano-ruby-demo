@@ -1,4 +1,7 @@
-%h2 New auction
+.row
+  .col-sm-12
+    .well.well-lg
+      %h2 New auction
 
-#auction-form
-  = render(partial: 'form', locals: { auction: @auction })
+      #auction-form
+        = render(partial: 'form', locals: { auction: @auction })

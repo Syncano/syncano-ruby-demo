@@ -1,17 +1,22 @@
 = form_for(auction, html: { class: 'std_form' }) do |f|
+  = f.label :category_id
+  = f.collection_select :category_id, Category.all, :id, :name, include_blank: true, class: 'form-control'
+  %p.text-danger= auction.errors[:category_id].first if auction.errors[:category_id].present?
+
   = f.label :title
-  = f.text_field :title, autofocus: true, required: true, class: 'form-control'
+  = f.text_field :title, required: true, class: 'form-control'
   %p.text-danger= auction.errors[:title].first if auction.errors[:title].present?
 
-  = f.label :description
-  = f.cktext_area :description, autofocus: true, required: true, class: 'form-control', ckeditor: { toolbar: 'mini'}
-  %p.text-danger= auction.errors[:description].first if auction.errors[:description].present?
+  = f.label :text
+  = f.cktext_area :text, required: true, class: 'form-control', ckeditor: { toolbar: 'mini'}
+  %p.text-danger= auction.errors[:text].first if auction.errors[:text].present?
 
   = f.label :price
-  = f.text_field :price, autofocus: true, required: true, class: 'form-control'
+  = f.text_field :price, required: true, class: 'form-control'
   %p.text-danger= auction.errors[:price].first if auction.errors[:price].present?
 
   = f.submit auction.new_record? ? 'Create' : 'Update', class: 'btn btn-lg btn-primary pull-right'
   = link_to(root_path, class: 'pull-right cancel-link') do
     %span.glyphicon.glyphicon-chevron-right
     cancel
+.clearfix

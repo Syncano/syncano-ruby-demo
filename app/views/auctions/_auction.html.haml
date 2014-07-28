@@ -1,9 +1,10 @@
 .auction.well.well-lg
   %h2.auction-title
     = auction.title
+    = auction.price
     %span.label.label-info.pull-right= number_to_currency(auction.price)
   .auction-description
-    = auction.description.html_safe
+    = auction.text.html_safe
 
   - if auction.belongs_to_user?(current_user)
     .actions.pull-right

@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   # ----------------------------------------------------------------------
   # Devise
   # ----------------------------------------------------------------------
-  # :lockable, :timeoutable and :omniauthable
-  devise :confirmable, :database_authenticatable, :registerable,
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # ----------------------------------------------------------------------
@@ -16,4 +16,11 @@ class User < ActiveRecord::Base
   # Attributes
   # ----------------------------------------------------------------------
   accepts_nested_attributes_for :profile
+
+  # ----------------------------------------------------------------------
+  # Methods
+  # ----------------------------------------------------------------------
+  def notification_settings
+    NotificationSetting.by_user_id(id)
+  end
 end

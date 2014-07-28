@@ -22,6 +22,6 @@ CKEDITOR.config.toolbar_mini = [
   ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock', '-', 'Link', 'Unlink','-','About']
 ]
 
-$(document).ready(function() {
+$(document).on('ready page:load', function(){
   $('select').selectpicker();
 });

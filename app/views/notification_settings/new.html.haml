@@ -1,4 +1,7 @@
-%h2 New notification setting
+.row
+  .col-sm-12
+    .well.well-lg
+      %h2 New notification setting
 
-#notification-setting-form
-  = render(partial: 'form', locals: { notification_setting: @notification_setting })
+      #notification-setting-form
+        = render(partial: 'form', locals: { notification_setting: @notification_setting })
