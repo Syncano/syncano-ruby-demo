@@ -21,4 +21,4 @@ There is [a rake task](lib/tasks/auctions.rake) which allows for notifying users
 
 ## More information
 
-For more information check Syncano ruby gem [documentation](http://rubydoc.info/gems/syncano/3.1.1/frames) and Syncano [Dev Center](https://syncano.zendesk.com/hc/en-us).
+For more information check Syncano ruby gem [documentation](http://rubydoc.info/gems/syncano/3.1.1/frames) and [Syncano Docs](http://docs.syncano.com).
